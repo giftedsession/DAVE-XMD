@@ -7,7 +7,7 @@ cmd({
     react: "✅",
     desc: "Get pairing code for 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 bot",
     category: "download",
-    use: ".pair 23490790XXX",
+    use: ".pair 25410426XXX",
     filename: __filename
 }, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, senderNumber, reply }) => {
     try {
