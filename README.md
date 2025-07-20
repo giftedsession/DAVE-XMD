@@ -51,7 +51,7 @@
   <img src="https://github.com/giftedsession/DAVE-XMD/blob/main/assets/deployheader.gif?raw=true" width="80%"/>
 </div>
 
-
+--- 
 
 ## 🛰️ Deployment Steps
 
@@ -59,7 +59,7 @@
     
 <div style="background: #111111; padding: 15px; border-radius: 10px; border-left: 3px solid #ff00ff;">
   <p style="color: #00ffff;">First star & Fork repo using button Below</p>
-  <a href='https://github.com/giftedsession/DAVE-XMD target="_blank">
+  <a href='https://github.com/giftedsession/DAVE-XMD/fork' target="_blank">
     <img src='https://img.shields.io/badge/FORK_REPOSITORY-008000?style=for-the-badge&logo=github&logoColor=white&labelColor=000000'/>
   </a>
 </div>
@@ -71,6 +71,7 @@
 <div style="background: #111111; padding: 15px; border-radius: 10px; border-left: 3px solid #00ffff;">
   
 --- 
+  
 > **PAIRING LINK (01)**
   <a href='https://zuko-pair-rvbt.onrender.com/' target="_blank">
     <img src='https://img.shields.io/badge/PAIR_CODE_1-00FFFF?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000'/>
