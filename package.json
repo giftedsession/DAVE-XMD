@@ -1,12 +1,12 @@
 {
-  "name": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃",
+  "name": "ZUKO-MD",
   "version": "4.5.0",
-  "description": "A WhatsApp Bot Created By 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃Tech",
+  "description": "A WhatsApp Bot Created By ZukoTech",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃",
-    "stop": "pm2 stop 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃",
-    "restart": "pm2 restart 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃"
+    "start": "pm2 start index.js --deep-monitoring --attach --name ZUKO-MD",
+    "stop": "pm2 stop ZUKO-MD",
+    "restart": "pm2 restart ZUKO-MD"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.7.9",
