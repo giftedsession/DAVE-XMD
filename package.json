@@ -4,7 +4,7 @@
   "description": "A WhatsApp Bot Created By Gifted Dave",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name ZUKO-MD",
+    "start": "pm2 start index.js --deep-monitoring --attach --name DAVE-XMD",
     "stop": "pm2 stop DAVE-XMD",
     "restart": "pm2 restart DAVE-XMD"
   },
