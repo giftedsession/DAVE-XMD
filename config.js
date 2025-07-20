@@ -5,7 +5,7 @@ function convertToBool(text, fault = 'true') {
     return text === fault ? true : false;
 }
 module.exports = {
-SESSION_ID: process.env.SESSION_ID || "DAVE~Yr8SyLCK#n3eeC9XdfrESnixukx26QzJqAvHx30AT57MuBP6zykY",
+SESSION_ID: process.env.SESSION_ID || "ZUKO~Yr8SyLCK#n3eeC9XdfrESnixukx26QzJqAvHx30AT57MuBP6zykY",
 // add your Session Id 
 AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "true",
 // make true or false status auto seen
@@ -37,13 +37,13 @@ CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️�
 // chose custom react emojis by yourself 
 DELETE_LINKS: process.env.DELETE_LINKS || "false",
 // automatic delete links witho remove member 
-OWNER_NUMBER: process.env.OWNER_NUMBER || "2349079XXXX",
+OWNER_NUMBER: process.env.OWNER_NUMBER || "25479XXXX",
 // add your bot owner number
-OWNER_NAME: process.env.OWNER_NAME || "ZÜKØ Tᴇᴄʜ",
+OWNER_NAME: process.env.OWNER_NAME || "𝐃𝐀𝐕𝐄",
 // add bot owner name
-DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ZÜKØ Tᴇᴄʜ*",
+DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𝐃𝐀𝐕𝐄 Tᴇᴄʜ*",
 // add bot owner name    
-ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/vn037q.jpg",
+ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/bn3ast.jpg",
 // add img for alive msg
 LIVE_MSG: process.env.LIVE_MSG || "> Zinda Hun Yar *𝐃𝐀𝐕𝐄-𝐗𝐌𝐃*⚡",
 // add alive msg here 
