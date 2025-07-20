@@ -1,6 +1,6 @@
 {
-    "bot-name": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃",
-    "description": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 made for people on Earth",
+    "bot-name": "DAVE-XMD",
+    "description": "DAVE-XMD made for people on Earth",
     "logo": "",
     "keywords": ["bot"],
     "documentation-link": "https://zuko-pair-rvbt.onrender.com",
@@ -8,7 +8,7 @@
   
     "env": {
       "SESSION_ID": {
-        "description": "Put your SESSION_ID here. Make sure it starts with DAVE~ or get session id from here, https://zuko-pair-rvbt.onrender.com",
+        "description": "Put your SESSION_ID here. Make sure it starts with ZOKOU~ or get session id from here, https://zuko-pair-rvbt.onrender.com",
         "value":"",
         "required": true
         
