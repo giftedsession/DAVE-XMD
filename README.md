@@ -37,7 +37,7 @@
 ---
 
 <div align="center">
-  <img src="https://files.catbox.moe/44hdk3.jpg" width="300" style="border-radius: 20px; box-shadow: 0 0 20px #00ffff;"/>
+  <img src="https://files.catbox.moe/bn3ast.jpg" width="300" style="border-radius: 20px; box-shadow: 0 0 20px #00ffff;"/>
 </div>
 
 <div align="center">
