@@ -19,7 +19,7 @@ cmd({
         await reply("🔍 Checking for 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 updates...");
 
         // Fetch the latest commit hash from GitHub
-        const { data: commitData } = await axios.get("https://api.github.com/repos/Neggy5/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃/commits/main");
+        const { data: commitData } = await axios.get("https://api.github.com/repos/giftedsession/DAVE-XMD/commits/main");
         const latestCommitHash = commitData.sha;
 
         // Get the stored commit hash from the database
@@ -44,7 +44,7 @@ cmd({
 
         // Copy updated files, preserving config.js and app.json
         await reply("🔄 Replacing files...");
-        const sourcePath = path.join(extractPath, "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃-main");
+        const sourcePath = path.join(extractPath, "DAVE-XMD-main");
         const destinationPath = path.join(__dirname, '..');
         copyFolderSync(sourcePath, destinationPath);
 
