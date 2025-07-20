@@ -1,8 +1,8 @@
 {
-  "name": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃",
-  "description": "Javascript WhatsApp bot made by Jᴀᴡᴀᴅ TᴇᴄʜX",
-  "logo": "https://files.catbox.moe/vn037q.jpg",
-  "keywords": ["𝐃𝐀𝐕𝐄-𝐗𝐌𝐃"],
+  "name": "DAVE-XMD",
+  "description": "Javascript WhatsApp bot made by Gifted Dave",
+  "logo": "https://files.catbox.moe/bn3ast.jpg",
+  "keywords": ["DAVE-XMD"],
   "success_url": "/",
 
     "stack": "container",
@@ -16,7 +16,7 @@
     "STICKER_NAME": {
       "description": "type your sticker pack name.",
       "required": false,
-      "value": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃"
+      "value": "DAVE-XMD"
     }, 
       
     "PREFIX": {
