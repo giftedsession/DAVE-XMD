@@ -14,7 +14,7 @@ handler.all = async function (m) {
       }) * 1000
     }
     let muptime = clockString(_muptime)
-		let bio = `\n⌚ Time Active ${muptime}\n\n ┃ 🛡️ DAVE'S ᗰᗪ🛡️`
+		let bio = `\n⌚ Time Active ${muptime}\n\n ┃ 🛡️𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 🛡️`
 		await this.updateProfileStatus(bio).catch(_ => _)
 		setting.status = new Date() * 1
   }
