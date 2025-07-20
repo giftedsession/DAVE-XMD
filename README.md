@@ -45,11 +45,13 @@
 </div>
 
 <div align="center">
-  <img src="https://github.com/giftedsession/DAVE-XMD width="100%"/>
+  <img src="https://github.com/giftedsession/DAVE-XMD/blob/main/assets/divider.gif?raw=true" width="100%"/>
 </div>
 <div align="center">
-  <img src="https://github.com/giftedsession/DAVE-XMD width="80%"/>
+  <img src="https://github.com/giftedsession/DAVE-XMD/blob/main/assets/deployheader.gif?raw=true" width="80%"/>
 </div>
+
+
 
 ## 🛰️ Deployment Steps
 
