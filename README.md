@@ -7,15 +7,25 @@
 </p>
 
 <div align="center">
-  <a href="https://github.com/giftedsession/DAVE-XMD title="Followers" src="https://img.shields.io/github/followers/Neggy5?color=EB5406&style=for-the-badge&logo=github&logoColor=white"></a>
-  <a href="https://github.com/giftedsession/DAVE-XMD title="Stars" src="https://img.shields.io/github/stars/Neggy5/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃?color=FFCE44&style=for-the-badge&logo=reverbnation&logoColor=white"></a>
-  <a href="https://github.com/giftedsession/DAVE-XMD title="Forks" src="https://img.shields.io/github/forks/Neggy5/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃?color=FF007F&style=for-the-badge&logo=git&logoColor=white"></a>
-  <a href="https://github.com/giftedsession/DAVE-XMD title="Size" src="https://img.shields.io/github/repo-size/Neggy5/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃?style=for-the-badge&color=FFFF33&logo=docusign&logoColor=white"></a>
-  <a href="https://github.com/giftedsession/DAVE-XMD height="28" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge&logo=gitpod&logoColor=white"></a>
+  <a href="https://github.com/giftedsession/DAVE-XMD" title="Followers">
+    <img src="https://img.shields.io/github/followers/giftedsession?color=EB5406&style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  <a href="https://github.com/giftedsession/DAVE-XMD" title="Stars">
+    <img src="https://img.shields.io/github/stars/giftedsession/DAVE-XMD?color=FFCE44&style=for-the-badge&logo=reverbnation&logoColor=white"/>
+  </a>
+  <a href="https://github.com/giftedsession/DAVE-XMD" title="Forks">
+    <img src="https://img.shields.io/github/forks/giftedsession/DAVE-XMD?color=FF007F&style=for-the-badge&logo=git&logoColor=white"/>
+  </a>
+  <a href="https://github.com/giftedsession/DAVE-XMD" title="Size">
+    <img src="https://img.shields.io/github/repo-size/giftedsession/DAVE-XMD?style=for-the-badge&color=FFFF33&logo=docusign&logoColor=white"/>
+  </a>
+  <a href="https://github.com/giftedsession/DAVE-XMD" title="Maintained">
+    <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge&logo=gitpod&logoColor=white"/>
+  </a>
 </div>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=𝐃𝐀𝐕𝐄-𝐗𝐌𝐃&label=VISITORS&style=flat-square&color=0002FF" />
+  <img src="https://komarev.com/ghpvc/?username=giftedsession&label=VISITORS&style=flat-square&color=0002FF" />
 </p>
 
 > **Current Bot Version `1.0.0`**  
@@ -98,7 +108,7 @@
       <td><a href="https://talkdrove.com" target="_blank"><img src="https://img.shields.io/badge/TalkDrove-6971FF?style=for-the-badge&logo=github&logoColor=white&labelColor=000000"/></a></td>
     </tr>
     <tr>
-      <td><a href="https://app.koyeb.com/services/deploy?type=git&repository=Neggy5/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃" target="_blank"><img src="https://img.shields.io/badge/Koyeb-FF009D?style=for-the-badge&logo=koyeb&logoColor=white&labelColor=000000"/></a></td>
+      <td><a href="https://app.koyeb.com/services/deploy?type=git&repository=giftedsession/DAVE-XMD" target="_blank"><img src="https://img.shields.io/badge/Koyeb-FF009D?style=for-the-badge&logo=koyeb&logoColor=white&labelColor=000000"/></a></td>
       <td><a href="https://railway.app/new" target="_blank"><img src="https://img.shields.io/badge/Railway-FF8700?style=for-the-badge&logo=railway&logoColor=white&labelColor=000000"/></a></td>
     </tr>
     <tr>
@@ -170,7 +180,7 @@
   <img src="https://github.com/giftedsession/DAVE-XMD width="100%"/>
 </div>
 
-##  🇳🇬 ZUKO STATUS
+##  DAVE-XMD STATUS
 
 ```diff
 + Project Status: Active
