@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃
+    name: DAVE-XMD
     env: node
     plan: free
     buildCommand: npm install
