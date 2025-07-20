@@ -280,7 +280,7 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 
-let dec = `> ZUKO-MD ANIME IMGS*`
+let dec = `> 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 ANIME IMGS*`
 await conn.sendMessage(from,{image:{url: `https://telegra.ph/file/b26f27aa5daaada031b90.jpg`},caption:dec},{quoted:mek});
 await conn.sendMessage(from,{image:{url: `https://telegra.ph/file/51b44e4b086667361061b.jpg`},caption:dec},{quoted:mek});
 await conn.sendMessage(from,{image:{url: `https://telegra.ph/file/7d165d73f914985542537.jpg`},caption:dec},{quoted:mek});
@@ -444,7 +444,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         await conn.sendMessage(from, { image: { url: data.message }, caption: '> *© Powered By ZUKO-AI> ' }, { quoted: mek });
     } catch (e) {
-        console.log(e); // ❯❯ Powered by ZUKO-MD 👑
+        console.log(e); // ❯❯ Powered by 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 👑
         reply(`єяяσя ƒєт¢нιηg ∂σg ιмαgє: ${e.message}`);
     }
 });

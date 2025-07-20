@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: zuko-md
+    name: 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃
     env: node
     plan: free
     buildCommand: npm install

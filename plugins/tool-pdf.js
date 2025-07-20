@@ -25,11 +25,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             await conn.sendMessage(from, {
                 document: pdfData,
                 mimetype: 'application/pdf',
-                fileName: 'ZukoTech.pdf',
+                fileName: '𝐃𝐀𝐕𝐄-𝐗𝐌𝐃Tech.pdf',
                 caption: `
 *📄 PDF created successully!*
 
-> © Created By ZukoTech ✅`
+> © Created By 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃Tech ✅`
             }, { quoted: mek });
         });
 

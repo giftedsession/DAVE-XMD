@@ -67,7 +67,7 @@ ${translatedTafsirEnglish.text}`;
           isForwarded: true,   
           forwardedNewsletterMessageInfo: {
             newsletterJid: '120363419799432387@newsletter', 
-            newsletterName: 'Zuko-Tech', 
+            newsletterName: '𝐃𝐀𝐕𝐄-𝐗𝐌𝐃-Tech', 
             serverMessageId: 143
           }
         }

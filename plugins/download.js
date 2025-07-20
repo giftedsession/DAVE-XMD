@@ -305,7 +305,7 @@ cmd({
         document: { url: downloadUrl },
         mimetype: response.data.result.mimetype,
         fileName: response.data.result.fileName,
-        caption: "*© Powered By Zuko Tech*"
+        caption: "*© Powered By 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 Tech*"
       }, { quoted: m });
 
       await conn.sendMessage(from, { react: { text: "✅", key: m.key } });

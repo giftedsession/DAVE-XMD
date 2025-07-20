@@ -5,7 +5,7 @@ cmd({
     pattern: "pair",
     alias: ["getpair", "clonebot"],
     react: "✅",
-    desc: "Get pairing code for ZUKO-MD bot",
+    desc: "Get pairing code for 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 bot",
     category: "download",
     use: ".pair 23490790XXX",
     filename: __filename
@@ -27,7 +27,7 @@ cmd({
         }
 
         const pairingCode = response.data.code;
-        const doneMessage = "> *ZUKO-MD PAIRING COMPLETED 😎*";
+        const doneMessage = "> *𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 PAIRING COMPLETED 😎*";
 
         // Send initial message with formatting
         await reply(`${doneMessage}\n\n*Your pairing code is:* ${pairingCode}`);

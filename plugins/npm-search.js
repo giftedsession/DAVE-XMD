@@ -33,7 +33,7 @@ cmd({
 
     // Create the response message
     const message = `
-*ZUKO-MD NPM SEARCH*
+*𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 NPM SEARCH*
 
 *🔰 NPM PACKAGE:* ${packageName}
 *📄 DESCRIPTION:* ${description}

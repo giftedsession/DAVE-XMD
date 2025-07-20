@@ -40,7 +40,7 @@ cmd({
           forwardingScore: 999,
           isForwarded: true,
           externalAdReply: {
-            title: config.BOT_NAME || "ZUKO-MD 🥀",
+            title: config.BOT_NAME || "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 🥀",
             body: config.DESCRIPTION || "POWERED BY ZUKO TECH 🤌🖤",
             mediaType: 1,
             renderLargerThumbnail: true,

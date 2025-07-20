@@ -15,7 +15,7 @@ cmd({
   reply
 }) => {
   if (!args[0]) {
-    return reply("❌ Where is the GitHub link?\n\nExample:\n.gitclone https://github.com/username/repository");
+    return reply("❌ Where is the GitHub link?\n\nExample:\n.gitclone https://github.com/giftedsession/DAVE-XMD
   }
 
   if (!/^(https:\/\/)?github\.com\/.+/.test(args[0])) {

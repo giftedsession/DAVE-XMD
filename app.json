@@ -1,8 +1,8 @@
 {
-  "name": "ZUKO-MD",
+  "name": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃",
   "description": "Javascript WhatsApp bot made by Jᴀᴡᴀᴅ TᴇᴄʜX",
   "logo": "https://files.catbox.moe/vn037q.jpg",
-  "keywords": ["ZUKO-MD"],
+  "keywords": ["𝐃𝐀𝐕𝐄-𝐗𝐌𝐃"],
   "success_url": "/",
 
     "stack": "container",
@@ -16,7 +16,7 @@
     "STICKER_NAME": {
       "description": "type your sticker pack name.",
       "required": false,
-      "value": "ZUKO-MD"
+      "value": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃"
     }, 
       
     "PREFIX": {
@@ -73,14 +73,14 @@
     "AUTO_STATUS_MSG": {
       "description": "Type custom message on status reply",
       "required": true,
-      "value": "*SEEN YOUR STATUS BY ZUKO-MD 🖤*"
+      "value": "*SEEN YOUR STATUS BY 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 🖤*"
    
      }, 
     
     "OWNER_NAME": {
       "description": "Type Bot Owner Name.",
       "required": false,
-      "value": "Zuko Tᴇᴄʜ"
+      "value": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 Tᴇᴄʜ"
 }, 
 
     "OWNER_NUMBER": {
@@ -93,7 +93,7 @@
     "BOT_NAME": {
       "description": "Type here the bot name.",
       "required": false,
-      "value": "ZUKO-MD"
+      "value": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃"
 
       }, 
 
@@ -132,7 +132,7 @@
      "DESCRIPTION": {
       "description": "add caption for menu and other",
       "required": false,
-      "value": "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ Zuko Tᴇᴄʜ*"
+      "value": "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 Tᴇᴄʜ*"
     },
 
       "DELETE_LINKS": {
@@ -200,7 +200,7 @@
 
      "buildpacks": [
         {
-            "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+            "url": "https://github.com/giftedsession/DAVE-XMD
         }
      ],
   "stack": "heroku-24"

@@ -832,7 +832,7 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
                         global.OwnerName
                     }\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${
                         global.email
-                    }\nitem2.X-ABLabel:GitHub\nitem3.URL:https://github.com/${
+                    }\nitem2.X-ABLabel:GitHub\nitem3.URL:https://github.com/giftedsession/DAVE-XMD
                         global.github
                     }/khan-xmd\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${
                         global.location
@@ -875,7 +875,7 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
   }
   
   app.get("/", (req, res) => {
-  res.send("ZUKO-MD STARTED ✅");
+  res.send("𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 STARTED ✅");
   });
   app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
   setTimeout(() => {

@@ -1,10 +1,10 @@
 FROM node:lts-buster
 
-# Clone the repository into /root/ZUKO-MD
-RUN git clone https://github.com/Neggy5/ZUKO-MD.git /root/ZUKO-MD
+# Clone the repository into /root/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃
+RUN git clone https://github.com/giftedsession/DAVE-XMD /root/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃
 
 # Set the working directory to the cloned repo
-WORKDIR /root/ZUKO-MD
+WORKDIR /root/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃
 
 # Install dependencies
 RUN npm install && npm install -g pm2
