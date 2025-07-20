@@ -1,5 +1,5 @@
 services:
-  - type: woker
+  - type: worker
     name: DAVE-XMD
     env: node
     plan: free
