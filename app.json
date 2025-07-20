@@ -86,14 +86,14 @@
     "OWNER_NUMBER": {
       "description": "put the owner number for bot.",
       "required": false,
-      "value": "23490790XXXX"
+      "value": "25410426XXXX"
 
     }, 
 
     "BOT_NAME": {
       "description": "Type here the bot name.",
       "required": false,
-      "value": "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃"
+      "value": "DAVE-XMD"
 
       }, 
 
@@ -126,7 +126,7 @@
     "MENU_IMAGE_URL": {
       "description": "add url for mention reply and menu if want.",
       "required": false,
-      "value": "https://files.catbox.moe/vn037q.jpg"
+      "value": "https://files.catbox.moe/bn3ast.jpg"
     },
     
      "DESCRIPTION": {
@@ -200,7 +200,7 @@
 
      "buildpacks": [
         {
-            "url": "https://github.com/giftedsession/DAVE-XMD
+                        "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
         }
      ],
   "stack": "heroku-24"
