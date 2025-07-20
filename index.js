@@ -875,7 +875,7 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
   }
   
   app.get("/", (req, res) => {
-  res.send("𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 STARTED ✅");
+  res.send("DAVE-XMD STARTED ✅");
   });
   app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
   setTimeout(() => {
