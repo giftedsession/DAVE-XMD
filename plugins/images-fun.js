@@ -442,7 +442,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const response = await axios.get(apiUrl);
         const data = response.data;
 
-        await conn.sendMessage(from, { image: { url: data.message }, caption: '> *© Powered By ZUKO-AI> ' }, { quoted: mek });
+        await conn.sendMessage(from, { image: { url: data.message }, caption: '> *© Powered By DAVE-AI> ' }, { quoted: mek });
     } catch (e) {
         console.log(e); // ❯❯ Powered by 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 👑
         reply(`єяяσя ƒєт¢нιηg ∂σg ιмαgє: ${e.message}`);

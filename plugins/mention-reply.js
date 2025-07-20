@@ -41,7 +41,7 @@ cmd({
           isForwarded: true,
           externalAdReply: {
             title: config.BOT_NAME || "𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 🥀",
-            body: config.DESCRIPTION || "POWERED BY ZUKO TECH 🤌🖤",
+            body: config.DESCRIPTION || "POWERED BY DAVE TECH 🤌🖤",
             mediaType: 1,
             renderLargerThumbnail: true,
             thumbnail: thumbnailBuffer,

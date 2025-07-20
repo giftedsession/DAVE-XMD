@@ -457,7 +457,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363419799432387@newsletter',
-                        newsletterName: 'ZUKO TECH',
+                        newsletterName: 'DAVE TECH',
                         serverMessageId: 143
                     }
                 }

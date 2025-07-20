@@ -81,7 +81,7 @@ Use *.update* to update.`;
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
           newsletterJid: '120363419799432387@newsletter',
-          newsletterName: 'ZUKO TECH',
+          newsletterName: 'DAVE TECH',
           serverMessageId: 143
         }
       }
