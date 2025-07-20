@@ -1,22 +1,65 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
+# === Node & JavaScript ===
+node_modules/
+.env
+.env.local
+.env.production
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# === WhatsApp Bot Sessions & Auth ===
+session/
+sessions/
+auth/
+Dave~*
+*.md.json
+*.sqlite
+*.sqlite-journal
+creds.json
+cache/
+tokens/
+temp/
+
+# === VSCode ===
 .vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
+
+# === Build Output ===
+dist/
+build/
+output/
 .output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
+
+# === Logs & Test ===
+*.log
 TestResults.xml
+coverage/
+.nyc_output/
+snapshots/
+.snapshots/
+
+# === AL (Dynamics 365) Files ===
+.alcache/
+.alpackages/
+*.app
+rad.json
+*.g.xlf
+*.flf
+
+# === Misc ===
+.DS_Store
+Thumbs.db
+*.zip
+*.rar
+
+# === OS-specific ===
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# === Git ===
+.git/
+.gitignore
+LICENSE
