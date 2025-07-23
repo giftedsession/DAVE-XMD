@@ -16,7 +16,6 @@ cmd({
   from, sender, pushname, reply
 }) => {
   try {
-    // Read local version data
     const localVersionPath = path.join(__dirname, '../data/version.json');
     let localVersion = 'Unknown';
     let changelog = 'No changelog available.';
@@ -26,8 +25,8 @@ cmd({
       changelog = localData.changelog;
     }
 
-    // Fetch latest version data from GitHub
-    const rawVersionUrl = 'https://raw.githubusercontent.com/Neggy5/ZUƘO-MD/main/data/version.json';
+    // GitHub version source
+    const rawVersionUrl = 'https://raw.githubusercontent.com/giftedsession/DAVE-XMD/main/data/version.json';
     let latestVersion = 'Unknown';
     let latestChangelog = 'No changelog available.';
     try {
@@ -38,24 +37,18 @@ cmd({
       console.error('Failed to fetch latest version:', error);
     }
 
-    // Count total plugins
     const pluginPath = path.join(__dirname, '../plugins');
     const pluginCount = fs.readdirSync(pluginPath).filter(file => file.endsWith('.js')).length;
-
-    // Count total registered commands
     const totalCommands = commands.length;
 
-    // System info
     const uptime = runtime(process.uptime());
     const ramUsage = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2);
     const totalRam = (os.totalmem() / 1024 / 1024).toFixed(2);
     const hostName = os.hostname();
     const lastUpdate = fs.statSync(localVersionPath).mtime.toLocaleString();
 
-    // GitHub stats
-    const githubRepo = 'https://github.com/giftedsession/DAVE-XMD
+    const githubRepo = 'https://github.com/giftedsession/DAVE-XMD';
 
-    // Check update status
     let updateMessage = `✅ Your 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 bot is up-to-date!`;
     if (localVersion !== latestVersion) {
       updateMessage = `🚀 Your 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 bot is outdated!
@@ -69,19 +62,18 @@ Use *.update* to update.`;
       `📌 *Bot Name:* 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃\n🔖 *Current Version:* ${localVersion}\n📢 *Latest Version:* ${latestVersion}\n📂 *Total Plugins:* ${pluginCount}\n🔢 *Total Commands:* ${totalCommands}\n\n` +
       `💾 *System Info:*\n⏳ *Uptime:* ${uptime}\n📟 *RAM Usage:* ${ramUsage}MB / ${totalRam}MB\n⚙️ *Host Name:* ${hostName}\n📅 *Last Update:* ${lastUpdate}\n\n` +
       `📝 *Changelog:*\n${latestChangelog}\n\n` +
-      `⭐ *GitHub Repo:* ${githubRepo}\n👤 *Owner:* [JawadTechX](https://github.com/giftedsession/DAVE-XMD *Hey! Don't forget to fork & star the repo!*`;
+      `⭐ *GitHub Repo:* ${githubRepo}\n👤 *Owner:* [Gifted Dave](https://github.com/giftedsession)\n\n${updateMessage}\n\n🚀 *Don't forget to fork & star the repo!*`;
 
-    // Send the status message with an image
     await conn.sendMessage(from, {
-      image: { url: 'https://files.catbox.moe/7zfdcq.jpg' },
+      image: { url: 'https://files.catbox.moe/nxzaly.jpg' },
       caption: statusMessage,
       contextInfo: {
         mentionedJid: [m.sender],
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363419799432387@newsletter',
-          newsletterName: 'DAVE TECH',
+          newsletterJid: '120363400480173280@newsletter',
+          newsletterName: '𝐃𝐀𝐕𝐄-𝐗𝐌𝐃',
           serverMessageId: 143
         }
       }
