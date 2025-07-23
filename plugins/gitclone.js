@@ -15,7 +15,7 @@ cmd({
   reply
 }) => {
   if (!args[0]) {
-    return reply("❌ Where is the GitHub link?\n\nExample:\n.gitclone https://github.com/giftedsession/DAVE-XMD
+    return reply("❌ Where is the GitHub link?\n\nExample:\n.gitclone https://github.com/username/repository");
   }
 
   if (!/^(https:\/\/)?github\.com\/.+/.test(args[0])) {
@@ -26,26 +26,19 @@ cmd({
     const regex = /github\.com\/([^\/]+)\/([^\/]+)(?:\.git)?/i;
     const match = args[0].match(regex);
 
-    if (!match) {
-      throw new Error("Invalid GitHub URL.");
-    }
+    if (!match) throw new Error("Invalid GitHub URL.");
 
     const [, username, repo] = match;
     const zipUrl = `https://api.github.com/repos/${username}/${repo}/zipball`;
 
-    // Check if repository exists
     const response = await fetch(zipUrl, { method: "HEAD" });
-    if (!response.ok) {
-      throw new Error("Repository not found.");
-    }
+    if (!response.ok) throw new Error("Repository not found.");
 
     const contentDisposition = response.headers.get("content-disposition");
     const fileName = contentDisposition ? contentDisposition.match(/filename=(.*)/)[1] : `${repo}.zip`;
 
-    // Notify user of the download
-    reply(`📥 *Downloading repository...*\n\n*Repository:* ${username}/${repo}\n*Filename:* ${fileName}\n\n> *Powered by 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃 *`);
+    reply(`📥 *Downloading repository...*\n\n*Repository:* ${username}/${repo}\n*Filename:* ${fileName}\n\n> *Powered by 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃*`);
 
-    // Send the zip file to the user with custom contextInfo
     await conn.sendMessage(from, {
       document: { url: zipUrl },
       fileName: fileName,
