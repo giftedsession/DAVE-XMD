@@ -1,17 +1,20 @@
+# Use official Node.js LTS image
 FROM node:lts-buster
 
-# Clone the repository into /root/𝐃𝐀𝐕𝐄-𝐗𝐌𝐃
+# Clone your GitHub repository
 RUN git clone https://github.com/giftedsession/DAVE-XMD /root/DAVE-XMD
 
-# Set the working directory to the cloned repo
+# Set working directory
 WORKDIR /root/DAVE-XMD
 
 # Install dependencies
-RUN npm install && npm install -g pm2
+RUN npm install && npm install -g pm2 || yarn install --network-concurrency 1
 
-# Copy local files if needed (optional, can be omitted if building from repo only)
-# COPY . .
+# Copy any remaining local files (optional)
+COPY . .
 
+# Expose your bot port (if needed)
 EXPOSE 9090
 
+# Start the bot
 CMD ["npm", "start"]
