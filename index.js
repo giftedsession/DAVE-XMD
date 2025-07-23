@@ -899,30 +899,34 @@ if (!isReact && senderNumber === botNumber) {
 
         // Status aka brio
         conn.setStatus = status => {
-            conn.query({
-                tag: 'iq',
-                attrs: {
-                    to: '@s.whatsapp.net',
-                    type: 'set',
-                    xmlns: 'status',
-                },
-                content: [
-                    {
-                        tag: 'status',
-                        attrs: {},
-                        content: Buffer.from(status, 'utf-8'),
-                    },
-                ],
-            });
-            return status;
-        };
-    conn.serializeM = mek => sms(conn, mek, store);
-  }
-  
-  app.get("/", (req, res) => {
-  res.send("ALI MD STARTED ✅");
+  conn.query({
+    tag: 'iq',
+    attrs: {
+      to: '@s.whatsapp.net',
+      type: 'set',
+      xmlns: 'status',
+    },
+    content: [
+      {
+        tag: 'status',
+        attrs: {},
+        content: Buffer.from(status, 'utf-8'),
+      },
+    ],
   });
-  app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
-  setTimeout(() => {
-  connectToWA()
-  }, 4000);
+  return status;
+};
+
+conn.serializeM = mek => sms(conn, mek, store);
+
+// Start express app
+app.get("/", (req, res) => {
+  res.send("ALI MD STARTED ✅");
+});
+
+app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
+
+// Start bot connection
+setTimeout(() => {
+  connectToWA(); // Make sure this function is defined!
+}, 4000);
