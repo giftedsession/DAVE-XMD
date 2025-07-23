@@ -1,47 +1,45 @@
-//Fixed ✅
-
 const {
-default: makeWASocket,
-useMultiFileAuthState,
-DisconnectReason,
-jidNormalizedUser,
-isJidBroadcast,
-getContentType,
-proto,
-generateWAMessageContent,
-generateWAMessage,
-AnyMessageContent,
-prepareWAMessageMedia,
-areJidsSameUser,
-downloadContentFromMessage,
-MessageRetryMap,
-generateForwardMessageContent,
-generateWAMessageFromContent,
-generateMessageID,
-makeInMemoryStore,
-jidDecode,
-fetchLatestBaileysVersion,
-Browsers
+  default: makeWASocket,
+  useMultiFileAuthState,
+  DisconnectReason,
+  jidNormalizedUser,
+  isJidBroadcast,
+  getContentType,
+  proto,
+  generateWAMessageContent,
+  generateWAMessage,
+  AnyMessageContent,
+  prepareWAMessageMedia,
+  areJidsSameUser,
+  downloadContentFromMessage,
+  MessageRetryMap,
+  generateForwardMessageContent,
+  generateWAMessageFromContent,
+  generateMessageID,
+  makeInMemoryStore,
+  jidDecode,
+  fetchLatestBaileysVersion,
+  Browsers
 } = require('@whiskeysockets/baileys');
 
 const l = console.log;
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions');
 const {
-AntiDelDB,
-initializeAntiDeleteSettings,
-setAnti,
-getAnti,
-getAllAntiDeleteSettings,
-saveContact,
-loadMessage,
-getName,
-getChatSummary,
-saveGroupMetadata,
-getGroupMetadata,
-saveMessageCount,
-getInactiveGroupMembers,
-getGroupMembersMessageCount,
-saveMessage
+  AntiDelDB,
+  initializeAntiDeleteSettings,
+  setAnti,
+  getAnti,
+  getAllAntiDeleteSettings,
+  saveContact,
+  loadMessage,
+  getName,
+  getChatSummary,
+  saveGroupMetadata,
+  getGroupMetadata,
+  saveMessageCount,
+  getInactiveGroupMembers,
+  getGroupMembersMessageCount,
+  saveMessage
 } = require('./data');
 const fs = require('fs');
 const ff = require('fluent-ffmpeg');
@@ -68,10 +66,10 @@ const ownerNumber = ['254104260236'];
 
 const tempDir = path.join(os.tmpdir(), 'cache-temp');
 if (!fs.existsSync(tempDir)) {
-fs.mkdirSync(tempDir);
+  fs.mkdirSync(tempDir);
 }
-  
-  const clearTempDir = () => {
+
+const clearTempDir = () => {
   fs.readdir(tempDir, (err, files) => {
     if (err) throw err;
     for (const file of files) {
@@ -111,24 +109,22 @@ if (!fs.existsSync(credsPath)) {
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 9090;
-//=====================================
-  
-  //=============================================
-  
+//==================================
+
   async function connectToWA() {
   console.log("Connecting to WhatsApp ⏳️...");
   const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/sessions/')
   var { version } = await fetchLatestBaileysVersion()
-  
+
   const conn = makeWASocket({
           logger: P({ level: 'silent' }),
           printQRInTerminal: false,
-          browser: Browsers.macOS("Firefox"),
+          browser: Browsers.ubuntu("Chrome"),
           syncFullHistory: true,
           auth: state,
           version
           })
-      
+
   conn.ev.on('connection.update', (update) => {
   const { connection, lastDisconnect } = update
   if (connection === 'close') {
@@ -145,16 +141,15 @@ const port = process.env.PORT || 9090;
   });
   console.log('Plugins installed successful ✅')
   console.log('Bot connected to whatsapp ✅')
-
-  let up = `*𝐇𝐄𝐋𝐋𝐎 𝐓𝐇𝐄𝐑𝐄 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃  𝐁𝐎𝐓👑*
-*𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘!*
   
+  let up = `*𝐇𝐄𝐋𝐋𝐎 𝐓𝐇𝐄𝐑𝐄 𝐃𝐀𝐕𝐄-𝐌𝐃 𝐁𝐎𝐓👑*
+*𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘!*
 *╭───━━━━───━━━━──┉┈⚆*
 *│• 𝐓𝐘𝐏𝐄 .𝐌𝐄𝐍𝐔 𝐓𝐎 𝐒𝐄𝐄 𝐋𝐈𝐒𝐓 •*
 *│• 𝐁𝐎𝐓 𝐀𝐌𝐀𝐙𝐈𝐍𝐆 𝐅𝐄𝐀𝐓𝐔𝐑𝐄𝐒 •*
-*│• 🌸𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑 : GIFTEDDAVE*
-*│• ⏰𝐀𝐋𝐖𝐀𝐘𝐒 𝐎𝐍𝐋𝐈𝐍𝐄 : ${online}*
-*│• 📜𝐏𝐑𝐄𝐅𝐈𝐗 : ${prefix}*
+*│• 𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑 : DAVE*
+*│• 𝐀𝐋𝐖𝐀𝐘𝐒 𝐎𝐍𝐋𝐈𝐍𝐄 : ${online}*
+*│• 𝐏𝐑𝐄𝐅𝐈𝐗 : ${prefix}*
 *│• 🪾𝐌𝐎𝐃𝐄 : ${mode}*
 *│• 🪄𝐒𝐓𝐀𝐓𝐔𝐒 𝐕𝐈𝐄𝐖𝐒 : ${status}*
 *│• 🫟𝐕𝐄𝐑𝐒𝐈𝐎𝐍 : 1.0.0*
