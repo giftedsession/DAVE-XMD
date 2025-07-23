@@ -54,34 +54,46 @@ const {
   }
   
   const clearTempDir = () => {
-      fs.readdir(tempDir, (err, files) => {
-          if (err) throw err;
-          for (const file of files) {
-              fs.unlink(path.join(tempDir, file), err => {
-                  if (err) throw err;
-              });
-          }
+  fs.readdir(tempDir, (err, files) => {
+    if (err) throw err;
+    for (const file of files) {
+      fs.unlink(path.join(tempDir, file), err => {
+        if (err) throw err;
       });
-  }
-  
-  // Clear the temp directory every 5 minutes
-  setInterval(clearTempDir, 5 * 60 * 1000);
-  
-  //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID.replace("IK~");
-const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-filer.download((err, data) => {
-if(err) throw err
-fs.writeFile(__dirname + '/sessions/creds.json', data, () => {
-console.log("Session downloaded ✅")
-})})}
+    }
+  });
+};
 
-const express = require("express");
+// Clear the temp directory every 5 minutes
+setInterval(clearTempDir, 5 * 60 * 1000);
+
+//===================SESSION-AUTH========================
+const credsPath = path.join(__dirname, 'sessions', 'creds.json');
+if (!fs.existsSync(credsPath)) {
+  if (!config.SESSION_ID) {
+    console.error('❌ SESSION_ID is not set! No session file found.');
+    console.log('🟡 Falling back to pairing code login...');
+  } else {
+    try {
+      const base64 = config.SESSION_ID.includes("Bellah~")
+        ? config.SESSION_ID.split("Bellah~")[1]
+        : config.SESSION_ID;
+      const sessionBuffer = Buffer.from(base64, 'base64');
+      fs.mkdirSync(path.dirname(credsPath), { recursive: true });
+      fs.writeFileSync(credsPath, sessionBuffer);
+      console.log('✅ Session restored from SESSION_ID');
+    } catch (err) {
+      console.error('❌ Failed to decode/write session:', err);
+      process.exit(1);
+    }
+  }
+}
+
+//=====================================
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 9090;
-  
+//=====================================
   //=============================================
   
   async function connectToWA() {
