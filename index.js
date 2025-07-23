@@ -145,24 +145,21 @@ const port = process.env.PORT || 9090;
   });
   console.log('Plugins installed successful ✅')
   console.log('Bot connected to whatsapp ✅')
+
+  let up = `*𝐇𝐄𝐋𝐋𝐎 𝐓𝐇𝐄𝐑𝐄 𝐃𝐀𝐕𝐄-𝐗𝐌𝐃  𝐁𝐎𝐓👑*
+*𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘!*
   
-  let up = `*✨ Hello, Sʜᴀᴅᴏᴡ Xᴛᴇᴄʜ Legend! ✨*
-
-╭─〔 *🤖 Sʜᴀᴅᴏᴡ Xᴛᴇᴄʜ* 〕  
-├─▸ *Ultrasonic Power and Infinite Speed!*  
-╰─➤ *Your New WhatsApp Sidekick is Here!*
-
-*❤️l Thank you for Choosing 𝕏Ե®em£~Ե𝖊𝖈𝖍_𝕏!*
-
-╭──〔 🔗 *Quick Links* 〕  
-├─ 📢 *Join Our Channel:*  
-│   Click [**Here**](https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10) to join!  
-├─ ⭐ *Give Us a Star:*  
-│   Star Us [**Here**](https://github.com/Tappy-Black/Xtreme-Tech_X)!  
-╰─🛠️ *Prefix:* \`${prefix}\`
-
-> _© MADE BY Ⴊl𐌀Ꮳk𐌕𐌀ႲႲჄ_`;
-    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/3hrxbh.jpg` }, caption: up })
+*╭───━━━━───━━━━──┉┈⚆*
+*│• 𝐓𝐘𝐏𝐄 .𝐌𝐄𝐍𝐔 𝐓𝐎 𝐒𝐄𝐄 𝐋𝐈𝐒𝐓 •*
+*│• 𝐁𝐎𝐓 𝐀𝐌𝐀𝐙𝐈𝐍𝐆 𝐅𝐄𝐀𝐓𝐔𝐑𝐄𝐒 •*
+*│• 🌸𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑 : GIFTEDDAVE*
+*│• ⏰𝐀𝐋𝐖𝐀𝐘𝐒 𝐎𝐍𝐋𝐈𝐍𝐄 : ${online}*
+*│• 📜𝐏𝐑𝐄𝐅𝐈𝐗 : ${prefix}*
+*│• 🪾𝐌𝐎𝐃𝐄 : ${mode}*
+*│• 🪄𝐒𝐓𝐀𝐓𝐔𝐒 𝐕𝐈𝐄𝐖𝐒 : ${status}*
+*│• 🫟𝐕𝐄𝐑𝐒𝐈𝐎𝐍 : 1.0.0*
+*┗───━━━━───━━━━──┉┈⚆*`;
+    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/30nl6i.jpg` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)
@@ -247,7 +244,7 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split('@')[0];
-    const jawad = ('923003588997');
+    const jawad = ('254104260236');
     let isCreator = [udp, jawad, config.DEV]
 					.map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
 					.includes(mek.sender);
@@ -293,15 +290,15 @@ const port = process.env.PORT || 9090;
 					return;
 				}
  //================ownerreact==============
-    if(senderNumber.includes("923003588997")){
+    if(senderNumber.includes("254104260236")){
   if(isReact) return
   m.react("🦋")
     }
-if(senderNumber.includes("923003588997")){
+if(senderNumber.includes("254104260236")){
   if(isReact) return
   m.react("🪄")
 	  }
-	  if(senderNumber.includes("923003588997")){
+	  if(senderNumber.includes("254104260236")){
   if(isReact) return
   m.react("👑")
 	  }
