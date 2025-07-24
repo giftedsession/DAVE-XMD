@@ -268,7 +268,7 @@ const reply = (teks) => {
 
 // Rest of your creator/eval code remains exactly the same
 const udp = botNumber.split('@')[0];
-const jawad = ('923003588997');
+const jawad = ('254104260236');
 let isCreator = [udp, jawad, config.DEV]
   .map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
   .includes(mek.sender);
@@ -315,7 +315,7 @@ let isCreator = [udp, jawad, config.DEV]
                                         return;
   }
       //================ownerreact==============
-if(senderNumber.includes("923003588997")){
+if(senderNumber.includes("254104260236")){
   if(isReact) return;
   try {
     await m.react("🦋"); 
@@ -704,6 +704,335 @@ conn.getFile = async (PATH, save) => {
     throw error;
   }
 
-  
-};
+}
+      //=====================================================
+conn.sendFile = async(jid, PATH, fileName, quoted = {}, options = {}) => {
+  try {
+    let types = await conn.getFile(PATH, true)
+    let { filename, size, ext, mime, data } = types
+    let type = ''
+    let mimetype = mime
+    let pathFile = filename
+
+    if (options.asDocument) type = 'document'
+    if (options.asSticker || /webp/.test(mime)) {
+        let { writeExif } = require('./exif.js')
+        let media = { mimetype: mime, data }
+        pathFile = await writeExif(media, { 
+          packname: Config.packname, 
+          author: Config.packname, 
+          categories: options.categories ? options.categories : [] 
+        })
+        await fs.promises.unlink(filename)
+        type = 'sticker'
+        mimetype = 'image/webp'
+    } 
+    else if (/image/.test(mime)) type = 'image'
+    else if (/video/.test(mime)) type = 'video'
+    else if (/audio/.test(mime)) type = 'audio'
+    else type = 'document'
+
+    await conn.sendMessage(jid, {
+        [type]: { url: pathFile },
+        mimetype,
+        fileName,
+        ...options
+    }, { quoted, ...options })
+    
+    return fs.promises.unlink(pathFile)
+  } catch (error) {
+    console.error('Error in sendFile:', error)
+    throw error
+  }
+}
+//=====================================================
+conn.parseMention = async(text) => {
+  return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
+}
+//=====================================================
+conn.sendMedia = async(jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
+  try {
+    let types = await conn.getFile(path, true)
+    let { mime, ext, res, data, filename } = types
+    
+    if (res && res.status !== 200 || data.length <= 65536) {
+        try { throw { json: JSON.parse(data.toString()) } } 
+        catch (e) { if (e.json) throw e.json }
+    }
+
+    let type = ''
+    let mimetype = mime
+    let pathFile = filename
+
+    if (options.asDocument) type = 'document'
+    if (options.asSticker || /webp/.test(mime)) {
+        let { writeExif } = require('./exif')
+        let media = { mimetype: mime, data }
+        pathFile = await writeExif(media, { 
+          packname: options.packname ? options.packname : Config.packname, 
+          author: options.author ? options.author : Config.author, 
+          categories: options.categories ? options.categories : [] 
+        })
+        await fs.promises.unlink(filename)
+        type = 'sticker'
+        mimetype = 'image/webp'
+    } 
+    else if (/image/.test(mime)) type = 'image'
+    else if (/video/.test(mime)) type = 'video'
+    else if (/audio/.test(mime)) type = 'audio'
+    else type = 'document'
+
+    await conn.sendMessage(jid, {
+        [type]: { url: pathFile },
+        caption,
+        mimetype,
+        fileName,
+        ...options
+    }, { quoted, ...options })
+    
+    return fs.promises.unlink(pathFile)
+  } catch (error) {
+    console.error('Error in sendMedia:', error)
+    throw error
+  }
+}
+//=====================================================
+conn.sendVideoAsSticker = async (jid, buff, options = {}) => {
+  try {
+    let buffer
+    if (options && (options.packname || options.author)) {
+      buffer = await writeExifVid(buff, options)
+    } else {
+      buffer = await videoToWebp(buff)
+    }
+    await conn.sendMessage(
+      jid,
+      { sticker: { url: buffer }, ...options },
+      options
+    )
+  } catch (error) {
+    console.error('Error in sendVideoAsSticker:', error)
+    throw error
+  }
+}
+//=====================================================
+conn.sendImageAsSticker = async (jid, buff, options = {}) => {
+  try {
+    let buffer
+    if (options && (options.packname || options.author)) {
+      buffer = await writeExifImg(buff, options)
+    } else {
+      buffer = await imageToWebp(buff)
+    }
+    await conn.sendMessage(
+      jid,
+      { sticker: { url: buffer }, ...options },
+      options
+    )
+  } catch (error) {
+    console.error('Error in sendImageAsSticker:', error)
+    throw error
+  }
+}
+//=====================================================
+conn.sendTextWithMentions = async(jid, text, quoted, options = {}) => {
+  return conn.sendMessage(jid, { 
+    text: text, 
+    contextInfo: { 
+      mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') 
+    }, 
+    ...options 
+  }, { quoted })
+}
+//=====================================================
+conn.sendImage = async(jid, path, caption = '', quoted = '', options) => {
+  try {
+    let buffer = Buffer.isBuffer(path) ? path : 
+      /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : 
+      /^https?:\/\//.test(path) ? await (await getBuffer(path)) : 
+      fs.existsSync(path) ? fs.readFileSync(path) : 
+      Buffer.alloc(0)
+    return await conn.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
+  } catch (error) {
+    console.error('Error in sendImage:', error)
+    throw error
+  }
+}
+//=====================================================
+conn.sendText = (jid, text, quoted = '', options) => {
+  return conn.sendMessage(jid, { text: text, ...options }, { quoted })
+}
+//=====================================================
+conn.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
+  let buttonMessage = {
+    text,
+    footer,
+    buttons,
+    headerType: 2,
+    ...options
+  }
+  conn.sendMessage(jid, buttonMessage, { quoted, ...options })
+}
+//=====================================================
+        //=====================================================
+  conn.send5ButImg = async(jid, text = '', footer = '', img, but = [], thumb, options = {}) => {
+    try {
+      let message = await prepareWAMessageMedia({ image: img, jpegThumbnail: thumb }, { upload: conn.waUploadToServer })
+      var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
+          templateMessage: {
+              hydratedTemplate: {
+                  imageMessage: message.imageMessage,
+                  "hydratedContentText": text,
+                  "hydratedFooterText": footer,
+                  "hydratedButtons": but
+              }
+          }
+      }), options)
+      conn.relayMessage(jid, template.message, { messageId: template.key.id })
+    } catch (error) {
+      console.error('Error in send5ButImg:', error)
+      throw error
+    }
+  }
+  //=====================================================
+
+  /**
+  * Get display name for a given JID
+  * @param {string} jid - The JID to get name for
+  * @param {boolean} [withoutContact=false] - Whether to exclude contact name
+  * @returns {Promise<string>|string} The display name
+  */
+  //=====================================================
+  conn.getName = (jid, withoutContact = false) => {
+    try {
+      id = conn.decodeJid(jid)
+      withoutContact = conn.withoutContact || withoutContact
+      let v
+
+      if (id.endsWith('@g.us')) {
+        return new Promise(async resolve => {
+          v = store.contacts[id] || {}
+          if (!(v.name.notify || v.subject)) {
+            v = conn.groupMetadata(id) || {}
+          }
+          resolve(
+            v.name ||
+            v.subject ||
+            PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international')
+          )
+        })
+      } else {
+        v = id === '0@s.whatsapp.net'
+          ? { id, name: 'WhatsApp' }
+          : id === conn.decodeJid(conn.user.id)
+            ? conn.user
+            : store.contacts[id] || {}
+
+        return (
+          (withoutContact ? '' : v.name) ||
+          v.subject ||
+          v.verifiedName ||
+          PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+        )
+      }
+    } catch (error) {
+      console.error('Error in getName:', error)
+      return jid.split('@')[0] // Fallback to phone number if error occurs
+    }
+  }
+  //=====================================================
+
+  /**
+  * Send contact cards
+  * @param {string} jid - The JID to send to
+  * @param {Array<string>} kon - Array of phone numbers
+  * @param {Object} [quoted] - Quoted message
+  * @param {Object} [opts] - Additional options
+  */
+  //=====================================================
+  conn.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+    try {
+      let list = []
+      for (let i of kon) {
+        const name = await conn.getName(i + '@s.whatsapp.net')
+        list.push({
+          displayName: name,
+          vcard: `BEGIN:VCARD\n
+            VERSION:3.0\n
+            N:${name}\n
+            FN:${global.OwnerName}\n
+            item1.TEL;waid=${i}:${i}\n
+            item1.X-ABLabel:Click here to chat\n
+            item2.EMAIL;type=INTERNET:${global.email}\n
+            item2.X-ABLabel:GitHub\n
+            item3.URL:https://github.com/${global.github}/khan-xmd\n
+            item3.X-ABLabel:GitHub\n
+            item4.ADR:;;${global.location};;;;\n
+            item4.X-ABLabel:Region\n
+          END:VCARD`.replace(/^\s+/gm, '') // Remove indentation
+        })
+      }
+
+      conn.sendMessage(
+        jid,
+        {
+          contacts: {
+            displayName: `${list.length} Contact`,
+            contacts: list,
+          },
+          ...opts,
+        },
+        { quoted },
+      )
+    } catch (error) {
+      console.error('Error in sendContact:', error)
+      throw error
+    }
+  }
+  //=====================================================
+
+  /**
+  * Set WhatsApp status
+  * @param {string} status - The status text to set
+  * @returns {string} The status that was set
+  */
+  //=====================================================
+  conn.setStatus = status => {
+    try {
+      conn.query({
+        tag: 'iq',
+        attrs: {
+          to: '@s.whatsapp.net',
+          type: 'set',
+          xmlns: 'status',
+        },
+        content: [{
+          tag: 'status',
+          attrs: {},
+          content: Buffer.from(status, 'utf-8'),
+        }],
+      })
+      return status
+    } catch (error) {
+      console.error('Error in setStatus:', error)
+      throw error
+    }
+  }
+  //=====================================================
+
+  conn.serializeM = mek => sms(conn, mek, store)
+}
+
+// Server setup
+//=====================================================
+app.get("/", (req, res) => {
+  res.send("DAVE-MD STARTED ✅")
+})
+
+app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`))
+setTimeout(() => {
+  connectToWA()
+}, 4000)
+//=====================================================
+      
       
